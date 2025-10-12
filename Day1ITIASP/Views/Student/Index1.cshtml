@@ -1,0 +1,14 @@
+﻿@model Day1ITIASP.Models.Student
+
+@if (Model != null)
+{
+    <h1>@Model.Name</h1>
+    <p>SSN: @Model.SSN</p>
+    <p>Age: @Model.Age</p>
+    <p>Address: @Model.Address</p>
+    <p>Email: @Model.Email</p>
+}
+else
+{
+    <h3>No student found</h3>
+}
