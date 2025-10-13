@@ -6,7 +6,7 @@ namespace Day1ITIASP.Controllers
     public class StudentController : Controller
     {
         AppDBcontext DB = new AppDBcontext();
-        public ViewResult GetAll()
+        public IActionResult GetAll()
         {
             var students = DB.Students.ToList();
             return View("Index",students);
@@ -18,15 +18,29 @@ namespace Day1ITIASP.Controllers
 
             if (student == null)
             {
-               
                 ViewBag.Message = "Student not found!";
                 return View("NotFound");
+            }     
+            return View("Index1", student);
+        }
+
+
+
+
+
+
+
+
+        public IActionResult AddNewStudent(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                DB.Students.Add(student);
+                DB.SaveChanges();
+                return RedirectToAction("GetAll");
             }
 
-            
-            return View("Index1", student);
-            
-
+            return View("Index2", student);
         }
     }
 }

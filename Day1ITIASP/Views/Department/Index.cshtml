@@ -1,0 +1,39 @@
+﻿@model List<Day1ITIASP.Models.Department>
+
+@{
+    ViewData["Title"] = "Departments List";
+}
+
+<h2 class="text-center text-primary my-3">Departments List</h2>
+
+<table class="table table-bordered table-striped text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Manager</th>
+            <th>Location</th>
+            
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dept in Model)
+        {
+            <tr>
+                <td>@dept.Id</td>
+                <td>@dept.Name</td>
+                <td>@dept.Manager</td>
+                <td>@dept.Location</td>
+                
+                <td>
+                    <a asp-action="Details" asp-route-id="@dept.Id" class="btn btn-info btn-sm">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="text-center mt-3">
+    <a asp-action="AddNewDepartment" class="btn btn-success">Add New Department</a>
+</div>

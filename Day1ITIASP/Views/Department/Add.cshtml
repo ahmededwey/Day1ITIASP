@@ -1,0 +1,26 @@
+﻿<form asp-controller="Department" asp-action="AddNewDepartment" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" name="Name" id="exampleInputEmail1" >  
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Manager</label>
+        <input type="text" class="form-control" name="Manager" id="exampleInputEmail1" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Location</label>
+        <input type="text" class="form-control" name="Location" id="exampleInputEmail1" >
+    </div>
+    <div class="form-group">
+        <label for="Branches">Branch</label>
+        <select class="form-control" id="Branches" name="Branches">
+            <option value="">-- Select Branch --</option>
+            <option value="Cairo">Cairo</option>
+            <option value="Giza">Giza</option>
+            <option value="Alexandria">Alexandria</option>
+            <option value="Minia">Minia</option>
+        </select>
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

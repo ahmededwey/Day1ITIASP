@@ -8,7 +8,7 @@
             <th scope="col">Name</th>
             <th scope="col">Age</th>
             <th scope="col">Address</th>
-            <th scope="col">IMG</th>
+
             <th scope="col">Email</th>
         </tr>
     </thead>
@@ -22,11 +22,10 @@
                 <td>@student.Name</td>
                 <td>@student.Age</td>
                 <td>@student.Address</td>
-                <td>
-                    <img src="@student.IMG" alt="Student Image" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" />
-                </td>
+                
                 <td>@student.Email</td>
             </tr>
         }
        </tbody>
 </table>
+<a asp-action="AddNewStudent" class="btn btn-success">Add New Student</a>

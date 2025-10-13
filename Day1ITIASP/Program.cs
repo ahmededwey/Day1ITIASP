@@ -27,7 +27,7 @@ namespace Day1ITIASP
             app.MapStaticAssets();
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Student}/{action=GetStudentBySSN}/{ssn?}")
+                pattern: "{controller=Department}/{action=GetAll}/{id?}")
                 .WithStaticAssets();
 
             app.Run();

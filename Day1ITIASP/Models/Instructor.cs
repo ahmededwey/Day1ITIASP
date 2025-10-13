@@ -2,23 +2,24 @@
 
 namespace Day1ITIASP.Models
 {
-    public class Student
+    public class Instructor
     {
         [Key]
-        public int SSN { get; set; }
+        public int Id { get; set; }
 
         [Required, StringLength(50)]
         public string Name { get; set; }
 
-        [Range(18, 40)]
+        [Range(20, 65)]
         public int Age { get; set; }
 
-        public string? Address { get; set; }
+        public decimal Salary { get; set; }
 
         public string? Image { get; set; }
 
-        [EmailAddress]
-        public string? Email { get; set; }
+        public DateTime HireDate { get; set; }
+
+        public string? Address { get; set; }
 
         // Foreign Key
         public int DepartmentId { get; set; }
@@ -26,7 +27,6 @@ namespace Day1ITIASP.Models
         // Navigation
         public Department Department { get; set; }
 
-        public ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
+        public ICollection<InstructorCourse> InstructorCourses { get; set; } = new List<InstructorCourse>();
     }
-
 }
