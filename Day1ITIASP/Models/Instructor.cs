@@ -8,7 +8,8 @@ namespace Day1ITIASP.Models
         public int Id { get; set; }
 
         [Required, StringLength(50)]
-        public string Name { get; set; }
+        [Display (Name="Full Name")]
+        public string? Name { get; set; }
 
         [Range(20, 65)]
         public int Age { get; set; }
@@ -25,8 +26,10 @@ namespace Day1ITIASP.Models
         public int DepartmentId { get; set; }
 
         // Navigation
-        public Department Department { get; set; }
+        public Department? Department { get; set; }
 
         public ICollection<InstructorCourse> InstructorCourses { get; set; } = new List<InstructorCourse>();
     }
+
+
 }

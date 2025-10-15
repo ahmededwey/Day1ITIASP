@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Day1ITIASP.Models.Instructor>
+@{
+    ViewData["Title"] = "Instructors";
+}
+<h1>Instructors</h1>
+<p><a asp-action="Create" class="btn btn-primary">New Instructor</a></p>
+
+<table class="table table-striped">
+    <thead><tr><th>#</th><th>Name</th><th>Age</th><th>Actions</th></tr></thead>
+    <tbody>
+        @foreach (var ins in Model)
+        {
+            <tr>
+                <td>@ins.Id</td>
+                <td>@ins.Name</td>
+                
+                <td>@ins.Age</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@ins.Id" class="btn btn-sm btn-info">Details</a>
+                    <a asp-action="Edit" asp-route-id="@ins.Id" class="btn btn-sm btn-warning">Edit</a>
+                   
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,3 +1,5 @@
+using Day1ITIASP.Models;
+
 namespace Day1ITIASP
 {
     public class Program
@@ -8,6 +10,7 @@ namespace Day1ITIASP
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IInstructorRepository, InstructorRepository>();
 
             var app = builder.Build();
 
@@ -27,7 +30,7 @@ namespace Day1ITIASP
             app.MapStaticAssets();
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Department}/{action=GetAll}/{id?}")
+                pattern: "{controller=Instructor}/{action=Index}/{id?}")
                 .WithStaticAssets();
 
             app.Run();

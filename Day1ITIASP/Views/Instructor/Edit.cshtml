@@ -1,0 +1,36 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "Edit Instructor";
+    var depts = new SelectList(ViewBag.Depts, "Id", "Name");
+}
+
+<h2 class="text-warning">Edit Instructor</h2>
+
+<form asp-action="Edit" method="post" class="shadow-sm p-4 mt-3 bg-light rounded">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    
+
+    <div class="form-group mb-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for="Age" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Salary" class="form-label"></label>
+        <input asp-for="Salary" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="DepartmentId" class="form-label">Department</label>
+        <select asp-for="DepartmentId" asp-items="depts" class="form-control"></select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
